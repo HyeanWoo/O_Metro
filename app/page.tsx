@@ -1,3 +1,3 @@
-import { HomePage } from '@/sources/pages';
+import { HomePage } from '@/pages';
 
 export default HomePage;

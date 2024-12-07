@@ -2,10 +2,22 @@
   "semi": true,
   "tabWidth": 2,
   "singleQuote": true,
+  "importOrder": [
+    "^react",
+    "^.(css|scss)$",
+    "<THIRD_PARTY_MODULES>",
+    "^@/pages",
+    "^@/api/(.*)$",
+    "^@/ui/(.*)$",
+    "^@/components/(.*)$",
+    "^[./]"
+  ],
+  "importOrderCaseInsensitive": false,
+  "importOrderSeparation": false,
+  "importOrderSortSpecifiers": true,
   "trailingComma": "all",
   "bracketSpacing": true,
   "useTabs": false,
-
   "plugins": [
     "prettier-plugin-tailwindcss",
     "@trivago/prettier-plugin-sort-imports"

@@ -1,6 +1,6 @@
-import ZoomSection from './ZoomSection';
-import SearchSection from './SearchSection';
 import Image from 'next/image';
+import SearchSection from './SearchSection';
+import ZoomSection from './ZoomSection';
 
 interface MetroLineMapProps {
   lineNumber: number;

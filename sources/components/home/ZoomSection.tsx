@@ -1,4 +1,4 @@
-import { Button } from '@/sources/components/ui/button';
+import { Button } from '@/ui/button';
 
 export default function ZoomSection() {
   return (
