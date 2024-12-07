@@ -1,4 +1,4 @@
-import { Button } from "@/sources/components/ui/button";
+import { Button } from '@/sources/components/ui/button';
 
 interface MetroLineItemProps {
   lineNumber: number;
@@ -15,7 +15,7 @@ export default function MetroLineItem({
 
   return (
     <Button
-      className="w-32 h-16 bg-blue-600 "
+      className="h-16 w-32 bg-blue-600"
       variant="default"
       onClick={handleClick}
     >{`${lineNumber} 호선`}</Button>

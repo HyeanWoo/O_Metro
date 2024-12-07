@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { MetroLineItem, MetroLineMap } from "@/sources/components/home";
-import { useState } from "react";
+import { MetroLineItem, MetroLineMap } from '@/sources/components/home';
+import { useState } from 'react';
 
 export default function Home() {
   const [lineNumber, setLineNumber] = useState(1);
