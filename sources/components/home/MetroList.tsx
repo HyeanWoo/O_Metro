@@ -1,14 +1,15 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { MetroListResponse } from '@/sources/api/types';
 
 export default function MetroInfo() {
-  const [metroList, setMetroList] = useState(null);
+  const [metroList, setMetroList] = useState<null | MetroListResponse>(null);
 
   useEffect(() => {
     const fetchMetroList = async () => {
-      const res = await fetch('http://localhost:8080/mock-position', {});
-      const data = await res.json();
+      const res = await fetch('http://localhost:8080/metro-list/line4');
+      const data = (await res.json()) as MetroListResponse;
       setMetroList(data);
     };
 
@@ -21,7 +22,7 @@ export default function MetroInfo() {
 
   return (
     <div className="flex overflow-x-auto w-full gap-2">
-      {metroList?.realtimePositionList?.map((metroItem: unknown) => (
+      {metroList?.realtimePositionList?.map((metroItem) => (
         <div
           key={metroItem.trainNo}
           className="flex flex-col w-52 flex-shrink-0 border border-indigo-600 p-1"
