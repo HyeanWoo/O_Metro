@@ -5,19 +5,30 @@ import { MetroListResponse } from '@/sources/api/types';
 
 export default function MetroInfo() {
   const [metroList, setMetroList] = useState<null | MetroListResponse>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchMetroList = async () => {
-      const res = await fetch('http://localhost:8080/metro-list/line4');
-      const data = (await res.json()) as MetroListResponse;
-      setMetroList(data);
+      try {
+        const res = await fetch('http://localhost:8080/metro-list/line4');
+        const data = (await res.json()) as MetroListResponse;
+        setMetroList(data);
+      } catch (err) {
+        console.warn(err);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     fetchMetroList();
   }, []);
 
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
   if (!metroList) {
-    return <div>현재 운행중인 지하철이 없습니다.</div>;
+    return <p>현재 운행중인 지하철이 없습니다.</p>;
   }
 
   return (
