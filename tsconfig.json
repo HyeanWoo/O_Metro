@@ -22,6 +22,7 @@
       "@/api/*": ["./sources/api/*"],
       "@/components/*": ["./sources/components/*"],
       "@/ui/*": ["./sources/components/ui/*"],
+      "@/shared": ["./sources/components/shared/index.ts"],
       "@/pages": ["./sources/pages/index.ts"],
       "@/utils/*": ["./sources/utils/*"]
     }
