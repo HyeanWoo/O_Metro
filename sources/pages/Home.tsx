@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { MetroLineItem, MetroLineMap } from '@/components/home';
+import MetroBoard from '../components/home/MetroBoard';
 import MetroInfo from '../components/home/MetroList';
 
 export default function Home() {
@@ -9,6 +10,8 @@ export default function Home() {
 
   return (
     <div className="flex p-5 flex-col gap-3">
+      <MetroBoard />
+      <MetroInfo />
       <div className="flex">
         <aside className="flex flex-col gap-2">
           <MetroLineItem lineNumber={1} setMetroLine={() => setLineNumber(1)} />
@@ -25,7 +28,6 @@ export default function Home() {
           <MetroLineMap lineNumber={lineNumber} />
         </main>
       </div>
-      <MetroInfo />
     </div>
   );
 }
