@@ -33,9 +33,9 @@ export default function MetroInfo() {
 
   return (
     <div className="flex overflow-x-auto w-full gap-2">
-      {metroList?.realtimePositionList?.map((metroItem) => (
+      {metroList?.realtimePositionList?.map((metroItem, idx) => (
         <div
-          key={metroItem.trainNo}
+          key={`${idx}-${metroItem.trainNo}`}
           className="flex flex-col w-52 flex-shrink-0 border border-indigo-600 p-1"
         >
           <span className="">{metroItem.rowNum}</span>
